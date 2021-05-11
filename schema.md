@@ -37,8 +37,7 @@ Column explanations:
 - athlete_id is the foreign key referencing the Athlete table.
 
 #### SuggestedRaces (race_id*)
-- Foreign Key athlete_id references Athlete
-
+(Query on the AllRaces table to populate this table)
 Represents suggested races that an athlete may sign up for. Based on the state the athlete lives in.
 
 Column explanations:
