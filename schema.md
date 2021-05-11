@@ -46,7 +46,7 @@ Column explanations:
 
 #### SuggestedRaces (race_id*, race_title, athlete_id, start_time, date, type, city, state, url)
 - Foreign Key athlete_id references Athlete
-- 
+
 Represents suggested races that an athlete may sign up for. Based on the state the athlete lives in.
 
 Column explanations:
