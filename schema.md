@@ -4,12 +4,13 @@
 
 Athlete (athlete_id*, first_name, last_name, username, password, email, state, race_counter)
 
-UpcomingRaces (race_id*, athlete_id)
+UpcomingRace (upcoming_race_id*, race_id, athlete_id)
+- Foreign Key race_id references Race
 - Foreign Key athlete_id references Athlete 
 
-SuggestedRaces (race_id*)
+SuggestedRace (race_id*)
 
-AllRaces (race_id*, race_title, athlete_id, start_time, date, type, city, state, url)
+Race (race_id*, race_title, start_time, date, type, city, state, url)
 - Foreign Key athlete_id references Athlete 
 
 ## Detailed Description:
@@ -27,7 +28,8 @@ Column explanations:
 - state is the state that the athlete lives in.
 - race_counter is an integer showing the number of races the athlete has completed in the current year.
 
-#### UpcomingRaces (race_id*, athlete_id)
+#### UpcomingRace (upcoming_race_id*, race_id, athlete_id)
+- Foreign Key race_id references Race
 - Foreign Key athlete_id references Athlete
 
 Represents all the upcoming races that the athlete is registered for.
@@ -36,14 +38,14 @@ Column explanations:
 - race_id is the primary key for the UpcomingRaces table.
 - athlete_id is the foreign key referencing the Athlete table.
 
-#### SuggestedRaces (race_id*)
+#### SuggestedRace (race_id*)
 (Query on the AllRaces table to populate this table)
 Represents suggested races that an athlete may sign up for. Based on the state the athlete lives in.
 
 Column explanations:
 - race_id is the primary key for the SuggestedRaces table.
 
-#### AllRaces (race_id*, race_title, athlete_id, start_time, date, type, city, state, url)
+#### Race (race_id*, race_title, start_time, date, type, city, state, url)
 - Foreign Key athlete_id references Athlete
 
 Represents all the races stored in our database.
@@ -51,7 +53,6 @@ Represents all the races stored in our database.
 Column explanations:
 - race_id is the primary key for the SuggestedRaces table.
 - race_title is the official name of the race.
-- athlete_id is the foreign key referencing the Athlete table.
 - start_time is the hour that the race will begin.
 - date is the month, day, and year that the race will take place.
 - type is the description of the race (i.e. 5k, marathon, triathlon, etc.)
