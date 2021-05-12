@@ -11,7 +11,6 @@ UpcomingRace (upcoming_race_id*, race_id, athlete_id)
 SuggestedRace (race_id*)
 
 Race (race_id*, race_title, start_time, date, type, city, state, url)
-- Foreign Key athlete_id references Athlete 
 
 ## Detailed Description:
 #### Athlete (athlete_id*, first_name, last_name, username, password, email, state, race_counter)
